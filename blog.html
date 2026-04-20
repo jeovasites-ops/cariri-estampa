@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Diário | Cariri Estampa</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS próprio -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/theme-default.css">
+    <link rel="stylesheet" href="./assets/css/blog.css">
+</head>
+<body>
+
+    <!-- HEADER OFICIAL UNIFICADO -->
+    <header class="header-app">
+        <div class="container d-flex justify-content-between align-items-center h-100">
+            <!-- Bloco Esquerdo: Logo + Links (Navegação Principal) -->
+            <div class="d-flex align-items-center gap-4">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none" aria-label="Home">
+                    <img src="./logo.svg" alt="Cariri Estampa" class="logo-img-h">
+                </a>
+                <nav class="d-none d-lg-flex gap-4 align-items-center mb-0">
+                    <a href="index.html" class="nav-link-desk">Início</a>
+                    <a href="loja.html"    class="nav-link-desk">Loja</a>
+                    <a href="sobre.html"   class="nav-link-desk">Sobre</a>
+                    <a href="blog.html"    class="nav-link-desk active">Blog</a>
+                    <a href="contato.html" class="nav-link-desk">Contato</a>
+                </nav>
+            </div>
+
+            <div class="d-flex align-items-center gap-1">
+                <a href="https://instagram.com/caririestampa" target="_blank" class="icon-btn" aria-label="Instagram">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+                <a href="carrinho.html" class="icon-btn d-none d-lg-inline-flex" aria-label="Carrinho" id="header-cart-link">
+                    <i class="ph ph-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-main py-4">
+        <div class="container">
+            <!-- Título da Seção -->
+            <div class="section-header">
+                <div>
+                    <span class="section-tag" id="portal-subtitle">Notícias e Tendências</span>
+                    <h2 class="section-title">Portal da Estampa</h2>
+                </div>
+            </div>
+
+            <!-- Categorias Scroll -->
+            <div class="cats-scroll" id="cat-filters">
+                <div class="cat-chip active">Carregando categorias...</div>
+            </div>
+
+            <!-- Container Feed -->
+            <div class="blog-container mt-4" id="feed-container">
+                <div class="skeleton-card skeleton"></div>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4"><div class="skeleton" style="height:280px;"></div></div>
+                    <div class="col-6 col-md-4"><div class="skeleton" style="height:280px;"></div></div>
+                    <div class="col-6 col-md-4"><div class="skeleton" style="height:280px;"></div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./logo.svg" alt="Cariri Estampa" class="logo-img-f mb-3">
+                    <p style="font-size:.88rem; color:var(--gray-500); line-height:1.7; max-width:280px;">
+                        A estamparia mais premium do Cariri Cearense. Qualidade que impressiona e identidade que marca.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://instagram.com/caririestampa" target="_blank" class="social-icon" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="social-icon" style="color:#25D366;" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Menu</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="loja.html">Loja</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Destaques</h5>
+                    <ul class="footer-links">
+                        <li><a href="loja.html?cat=Vestuario">Camisetas</a></li>
+                        <li><a href="loja.html?cat=Brindes">Brindes</a></li>
+                        <li><a href="loja.html?cat=Papelaria">Papelaria</a></li>
+                        <li><a href="loja.html?cat=Grafica">Gráfica</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Atendimento</h5>
+                    <div class="footer-location mb-3">
+                        <i class="ph-fill ph-map-pin" style="color:var(--red); font-size:1.2rem;"></i>
+                        <p style="font-size:.85rem; color:var(--gray-700); margin:0;">Atendemos Crato, Juazeiro e Barbalha com rotas diárias.</p>
+                    </div>
+                    <div class="footer-location">
+                        <i class="ph-fill ph-clock" style="color:var(--red); font-size:1.2rem;"></i>
+                        <p style="font-size:.85rem; color:var(--gray-700); margin:0;">Seg à Sex: 08h às 18h<br>Sáb: 08h às 12h</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+            <p class="footer-cnpj">CNPJ: 64.134.860/0001-89 &mdash; Cariri Estampa</p>
+            <p class="footer-dev">Dev: <a href="https://wa.me/5588999274659" target="_blank">Jeová Cavalcante</a></p>
+                <p>&copy; 2026 Cariri Estampa. Todos os direitos reservados.</p>
+                <p style="color:var(--gray-400);">Feito com <i class="ph-fill ph-heart" style="color:var(--red);"></i> no Cariri - CE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Leitura -->
+    <div class="article-modal" id="leitura-modal">
+        <div class="article-header-nav">
+            <button class="btn-close" onclick="fecharArtigo()"><i class="ph ph-x"></i></button>
+            <div style="font-weight:700; font-size:0.9rem;" id="modal-top-tag">Portal Cariri</div>
+            <div style="width:40px;"></div>
+        </div>
+        <div class="article-hero"><img id="modal-img" src="" alt="Capa"></div>
+        <div class="article-body">
+            <span class="article-label" id="modal-cat">Categoria</span>
+            <h1 class="article-title" id="modal-title">Título</h1>
+            <div class="author-box">
+                <div class="author-avatar"><i class="ph ph-user-circle"></i></div>
+                <div class="author-info">
+                    <strong id="modal-author">Autor</strong>
+                    <span style="font-size:0.8rem; color:var(--text-muted);"><span id="modal-date">Data</span> • <span id="modal-time">0 min</span></span>
+                </div>
+            </div>
+            <div class="article-content" id="modal-content"></div>
+
+            <!-- Share Bar -->
+            <div class="share-bar">
+                <a href="#" class="btn-share btn-share-wa" id="share-wa">
+                    <i class="ph-fill ph-whatsapp-logo"></i> Compartilhar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação Mobile -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="nav-item">
+            <i class="ph ph-house-simple"></i><span>Início</span>
+        </a>
+        <a href="loja.html" class="nav-item">
+            <i class="ph ph-storefront"></i><span>Loja</span>
+        </a>
+        <a href="carrinho.html" class="nav-item nav-center">
+            <div class="nav-center-icon"><i class="ph ph-shopping-bag"></i><span class="nav-center-badge" id="nav-cart-count">0</span></div>
+            <span>Sacola</span>
+        </a>
+        <a href="sobre.html" class="nav-item">
+            <i class="ph ph-user-circle"></i><span>Sobre</span>
+        </a>
+        <a href="blog.html" class="nav-item active">
+            <i class="ph ph-article"></i><span>Blog</span>
+        </a>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/core.js"></script>
+    <script>
+        let dbArtigos = [];
+        let dbCategorias = [];
+
+        async function initBlog() {
+            try {
+                const resp = await fetch('./assets/data/blog.json');
+                const data = await resp.json();
+                dbArtigos = data.artigos || [];
+                dbCategorias = data.categorias || ["Todos"];
+                renderCategories();
+                renderCards("Todos");
+            } catch(e) { $('#feed-container').html('<p class="text-center text-danger">Erro ao carregar o portal. Use um servidor local.</p>'); }
+        }
+
+        function renderCategories() {
+            const filterEl = $('#cat-filters').empty();
+            dbCategorias.forEach(c => {
+                const chip = $(`<div class="cat-chip ${c === 'Todos' ? 'active' : ''}">${c}</div>`);
+                chip.on('click', function() { $('.cat-chip').removeClass('active'); $(this).addClass('active'); renderCards(c); });
+                filterEl.append(chip);
+            });
+        }
+
+        function renderCards(filtro) {
+            const feed = $('#feed-container').empty();
+            let arts = (filtro === "Todos") ? dbArtigos : dbArtigos.filter(a => a.categoria === filtro);
+            if(!arts.length) { feed.html('<div class="text-center py-5"><h3>Nenhum artigo encontrado.</h3><p>Tente outra categoria.</p></div>'); return; }
+
+            // Primeiro: Destaque
+            const d = arts[0];
+            feed.append(`
+                <div class="featured-card" onclick="abrirArtigo('${d.id}')" style="opacity:0; transform:translateY(20px);">
+                    <img src="${d.imagem_capa}" class="bg" alt="">
+                    <div class="featured-content">
+                        <span class="tag-destaque">${d.categoria}</span>
+                        <h2 class="featured-title">${d.titulo}</h2>
+                    </div>
+                </div>
+            `);
+
+            // Bento Grid para os demais
+            if (arts.length > 1) {
+                const grid = $('<div class="bento-news-grid"></div>');
+                for(let i=1; i<arts.length; i++) {
+                    const a = arts[i];
+                    // Atribui tamanhos baseados no índice para criar o visual Bento
+                    let sizeClass = 'size-sm';
+                    if (i === 1) sizeClass = 'size-lg';
+                    else if (i === 2) sizeClass = 'size-md';
+
+                    grid.append(`
+                        <div class="bento-post-card ${sizeClass}" onclick="abrirArtigo('${a.id}')" style="opacity:0; transform:translateY(20px);">
+                            <div class="bento-img"><img src="${a.imagem_capa}" alt=""></div>
+                            <div class="bento-content">
+                                <span class="bento-cat">${a.categoria}</span>
+                                <h3 class="bento-title">${a.titulo}</h3>
+                                <p class="bento-resumo">${a.resumo}</p>
+                                <div class="bento-meta">
+                                    <i class="ph ph-calendar-blank"></i> ${a.data_publicacao}
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                }
+                feed.append(grid);
+            }
+
+            // Animação de entrada
+            setTimeout(() => {
+                $('.featured-card, .bento-post-card').each(function(i) {
+                    setTimeout(() => {
+                        $(this).css({ 'opacity': 1, 'transform': 'translateY(0)', 'transition': '0.7s cubic-bezier(0.16, 1, 0.3, 1)' });
+                    }, i * 100);
+                });
+            }, 50);
+        }
+
+        function abrirArtigo(id) {
+            const a = dbArtigos.find(x => x.id === id);
+            if(!a) return;
+            $('#modal-img').attr('src', a.imagem_capa);
+            $('#modal-cat').text(a.categoria);
+            $('#modal-title').text(a.titulo);
+            $('#modal-author').text(a.autor);
+            $('#modal-date').text(a.data_publicacao);
+            $('#modal-time').text(a.tempo_leitura_minutos + ' min');
+            $('#modal-content').html(a.conteudo_paragrafos.map(p => `<p>${p}</p>`).join(''));
+            
+            // Configurar botões de compartilhamento
+            const shareUrl = encodeURIComponent(window.location.href);
+            const shareText = encodeURIComponent(`Olha que interessante esse artigo da Cariri Estampa: ${a.titulo}`);
+            $('#share-wa').attr('href', `https://api.whatsapp.com/send?text=${shareText}%20${shareUrl}`);
+
+            $('#leitura-modal').addClass('active');
+            $('body').css('overflow', 'hidden');
+        }
+
+        function fecharArtigo() { $('#leitura-modal').removeClass('active'); $('body').css('overflow', ''); }
+        $(document).ready(() => initBlog());
+    </script>
+</body>
+</html>

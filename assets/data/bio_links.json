@@ -1,0 +1,30 @@
+{
+  "_README": "=============== PÁGINA DE LINKS (LINKTREE) | BIO DO INSTAGRAM ===============",
+  "_HINT_LINKS": "Aqui você gerencia unicamente os botões da página /links.html. Adicione novos blocos com título, url e um ícone do Phosphor Icons.",
+  "links_page": [
+    {
+      "label": "Fazer Pedido por WhatsApp",
+      "url": "https://wa.me/5588999274659",
+      "icon": "ph-fill ph-whatsapp-logo",
+      "color_class": "text-whatsapp"
+    },
+    {
+      "label": "Ver Catálogo Completo",
+      "url": "loja.html",
+      "icon": "ph-fill ph-shopping-bag",
+      "color_class": "text-shopping"
+    },
+    {
+      "label": "Siga no Instagram",
+      "url": "https://instagram.com/caririestampa",
+      "icon": "ph-fill ph-instagram-logo",
+      "color_class": "text-insta"
+    },
+    {
+      "label": "Conheça nossa História",
+      "url": "sobre.html",
+      "icon": "ph-fill ph-user-circle",
+      "color_class": "text-history"
+    }
+  ]
+}

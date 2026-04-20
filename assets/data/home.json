@@ -1,0 +1,81 @@
+{
+  "_README": "=============== PÁGINA INICIAL (HOME) | CARIRI ESTAMPA ===============",
+  "_HINT_BANNERS": "O carousel suporta imagens Desktop (1920x600) e Mobile (600x800).",
+  "_HINT_BENTO": "A grade Bento (Destaques) pode ter tipos: 'imagem', 'estatistica' ou 'whatsapp'.",
+  
+  "_nota_banners": "Gerencia o carrossel / slider de imagens principal no topo do site.",
+  "banners": [
+    {
+      "id": 1,
+      "imagem_desktop": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&h=450&q=80",
+      "imagem_mobile": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&h=500&q=80",
+      "titulo": "Sua Marca em Destaque",
+      "subtitulo": "Gráfica rápida e papelaria personalizada com qualidade premium direto do Cariri.",
+      "texto_botao": "Ver Catálogo",
+      "link_botao": "loja.html",
+      "estilo": "escuro"
+    },
+    {
+      "id": 2,
+      "imagem_desktop": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&h=450&q=80",
+      "imagem_mobile": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&h=500&q=80",
+      "titulo": "Camisetas DTF Premium",
+      "subtitulo": "Estampas que não racham e cores vibrantes. Sem limite de cores, do tamanho que você quiser.",
+      "texto_botao": "Fazer Orçamento",
+      "link_botao": "https://wa.me/5588999274659",
+      "estilo": "suave"
+    }
+  ],
+  
+  "_nota_bento": "Estes são os quadros de destaque da constelação (Bento Grid) que mostram as categorias ou metas na página inicial.",
+  "bento_grid": [
+    {
+      "tipo": "imagem",
+      "classe_tamanho": "bento-large",
+      "imagem": "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=800&q=80",
+      "icone": "ph-fill ph-notebook",
+      "titulo": "Papelaria",
+      "subtitulo": "Agendas, cadernos e kits personalizados",
+      "link": "loja.html?cat=Papelaria",
+      "texto_cta": "Ver Produtos"
+    },
+    {
+      "tipo": "imagem",
+      "classe_tamanho": "bento-medium",
+      "imagem": "https://images.unsplash.com/photo-1589384267710-7a170981ca78?auto=format&fit=crop&w=600&q=80",
+      "icone": "ph-fill ph-printer",
+      "titulo": "Gráfica",
+      "subtitulo": "Cartões, panfletos e banners",
+      "link": "loja.html?cat=Grafica",
+      "texto_cta": "Ver Produtos"
+    },
+    {
+      "tipo": "estatistica",
+      "classe_tamanho": "bento-stat",
+      "link": null,
+      "estilo_fundo": "linear-gradient(135deg,#E53E3E,#C53030)",
+      "icone_bg": "ph-fill ph-trophy",
+      "numero": "+2.000",
+      "rotulo": "Pedidos Entregues"
+    },
+    {
+      "tipo": "imagem",
+      "classe_tamanho": "bento-medium",
+      "imagem": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80",
+      "icone": "ph-fill ph-t-shirt",
+      "titulo": "Camisetas DTF",
+      "subtitulo": "Alta durabilidade, cores vibrantes",
+      "link": "loja.html?cat=Vestuario",
+      "texto_cta": "Ver Produtos"
+    },
+    {
+      "tipo": "whatsapp",
+      "classe_tamanho": "bento-stat",
+      "link": "https://wa.me/5588999274659",
+      "estilo_fundo": "linear-gradient(135deg,#38A169,#276749)",
+      "icone_bg": "ph-fill ph-whatsapp-logo",
+      "icone_destaque": "ph-fill ph-chat-circle-dots",
+      "rotulo": "Pedir agora pelo<br>WhatsApp"
+    }
+  ]
+}

@@ -1,0 +1,604 @@
+/* ================================
+   HOME.CSS — Cariri Estampa 2026
+   Mobile-First | Foco em Conversão
+   ================================ */
+
+/* ------ TOKENS & BASE ------ */
+:root {
+    --red:      #E53E3E;
+    --red-lt:   #FFF5F5;
+    --green:    #38A169;
+    --green-lt: #F0FFF4;
+    --gray-900: #1A202C;
+    --gray-700: #4A5568;
+    --gray-500: #718096;
+    --gray-400: #A0AEC0;
+    --gray-100: #F7FAFC;
+    --gray-50:  #FAFAFA;
+    --white:    #FFFFFF;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
+    --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,.10);
+    --radius-xl: 28px;
+    --radius-2xl: 40px;
+    --radius-pill: 999px;
+}
+
+/* ------ HEADER ------ */
+.logo-icon {
+    width: 40px; height: 40px;
+    background: var(--red-lt);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--red);
+    font-size: 19px;
+    flex-shrink: 0;
+}
+.logo-icon-sm { width: 34px; height: 34px; border-radius: 10px; font-size: 16px; }
+
+/* Logo Text (Shared globally) */
+.logo-text {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--gray-900);
+    letter-spacing: -0.03em;
+    text-decoration: none;
+}
+
+/* ------ HERO BANNER SLIDER ------ */
+.hero-banner-section {
+    padding: 16px 0 8px;
+    background: var(--white);
+}
+
+/* Container segue o padrão global de main.css */
+
+#heroCarousel {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.banner-item {
+    position: relative;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: block;
+}
+
+/* Overlay gradiente (escorece lado esquerdo pra texto legível) */
+.banner-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.40) 55%,
+        rgba(0,0,0,0.10) 100%);
+    z-index: 1;
+}
+
+.banner-item.suave::before {
+    background: linear-gradient(105deg,
+        rgba(255,255,255,0.90) 0%,
+        rgba(255,255,255,0.60) 55%,
+        rgba(255,255,255,0.10) 100%);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px 40px 48px;
+    max-width: 560px;
+}
+
+.banner-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.banner-item.suave .banner-title { color: var(--gray-900); }
+
+.banner-subtitle {
+    font-size: .95rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    margin-bottom: 24px;
+}
+.banner-item.suave .banner-subtitle { color: var(--gray-700); }
+
+.btn-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    width: fit-content;
+    box-shadow: 0 8px 24px rgba(229,62,62,0.45);
+    transition: transform .2s, box-shadow .2s;
+}
+.btn-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(229,62,62,0.55);
+    color: #fff;
+}
+
+/* Indicadores (pontinhos) */
+.carousel-indicators {
+    margin-bottom: 20px;
+    gap: 6px;
+    align-items: center;
+}
+.carousel-indicators [data-bs-target] {
+    width: 24px; height: 5px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.35);
+    border: none;
+    transition: all .3s;
+    margin: 0 3px;
+}
+.carousel-indicators .active {
+    width: 48px;
+    background-color: var(--red);
+}
+
+/* Setas de controle (desktop) */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+#heroCarousel:hover .carousel-control-prev,
+#heroCarousel:hover .carousel-control-next {
+    opacity: 0.7;
+}
+
+/* ------ SEÇÃO: CATEGORIAS (Tabs Rápidas) ------ */
+.cats-section {
+    padding: 20px 0 8px;
+    background: var(--white);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: .95rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--red) 0%, #F6828C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.see-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--red);
+    text-decoration: none;
+    transition: gap .2s;
+}
+.see-all-link:hover { gap: 10px; color: var(--red); }
+
+/* ------ CARDS DE PRODUTO ------ */
+.product-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #EDF2F7;
+    transition: transform .25s, box-shadow .25s;
+    height: 100%;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-img {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--gray-100);
+}
+.card-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+.product-card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.badge-hot {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: var(--red);
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.card-body {
+    padding: 12px 14px 14px;
+}
+.card-tag {
+    font-size: .7rem;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 4px;
+}
+.card-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--gray-900);
+    line-height: 1.3;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--gray-900);
+}
+
+.btn-add-card {
+    width: 34px; height: 34px;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+    flex-shrink: 0;
+}
+.btn-add-card:hover {
+    transform: scale(1.1);
+    background: #C53030;
+}
+
+/* Skeleton loading */
+.product-skeleton {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid #EDF2F7;
+}
+.product-skeleton::before {
+    content: '';
+    display: block;
+    aspect-ratio: 1;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-load 1.5s infinite;
+}
+.product-skeleton::after {
+    content: '';
+    display: block;
+    height: 80px;
+    background: linear-gradient(90deg, #f9f9f9 25%, #f0f0f0 50%, #f9f9f9 75%);
+    background-size: 200% 100%;
+    animation: skeleton-load 1.5s infinite 0.2s;
+}
+
+@keyframes skeleton-load {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ------ BENTO GRID DE CATEGORIAS ------ */
+.bento-section {
+    padding: 32px 0;
+    background: var(--white);
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 14px;
+}
+
+.bento-card {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    text-decoration: none;
+    background: var(--gray-100);
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease;
+    display: block;
+}
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.bento-large {
+    grid-column: 1 / 3;
+    min-height: 300px;
+}
+.bento-medium { min-height: 180px; }
+.bento-stat {
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.bento-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    transition: transform .4s ease;
+}
+.bento-card:hover .bento-img { transform: scale(1.04); }
+
+.bento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: #fff;
+}
+.bento-overlay h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+.bento-overlay p { font-size: .8rem; opacity: .85; margin: 0 0 10px; }
+.bento-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .78rem;
+    font-weight: 700;
+    opacity: .9;
+    transition: gap .2s;
+}
+.bento-card:hover .bento-cta { gap: 10px; }
+
+.bento-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.bento-stat-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 4px;
+}
+.bento-stat-label {
+    font-size: .82rem;
+    font-weight: 600;
+    opacity: .88;
+}
+
+/* ------ CTA WHATSAPP SIMPLES ------ */
+.cta-whatsapp-section {
+    padding: 24px 0 16px;
+    background: var(--white);
+}
+
+.cta-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #25D366;
+    color: #fff;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 18px 32px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+    transition: transform .2s, box-shadow .2s;
+}
+.cta-whatsapp-btn i { font-size: 1.5rem; }
+.cta-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(37,211,102,0.5);
+    color: #fff;
+}
+
+/* ------ CTA FINAL (desktop) ------ */
+.cta-section {
+    padding: 64px 0;
+    background: var(--gray-50);
+}
+
+.cta-card {
+    background: linear-gradient(135deg, var(--gray-900) 0%, #2D3748 100%);
+    border-radius: var(--radius-2xl);
+    padding: 60px 56px;
+    position: relative;
+    overflow: hidden;
+}
+.cta-glow {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(229,62,62,.25) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+}
+.cta-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+.cta-title-highlight {
+    background: linear-gradient(135deg, var(--red) 0%, #F6828C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cta-subtitle { font-size: 1rem; color: rgba(255,255,255,0.65); margin: 0; }
+
+.btn-cta-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: #fff;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 18px 36px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37,211,102,.4);
+    transition: .25s;
+}
+.btn-cta-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(37,211,102,.5);
+    color: #fff;
+}
+.btn-cta-catalog {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    font-size: .92rem;
+    text-decoration: none;
+    transition: color .2s;
+}
+.btn-cta-catalog:hover { color: rgba(255,255,255,0.9); }
+
+/* ------ WHATSAPP FLOAT (apenas desktop) ------ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    width: 52px; height: 52px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(37,211,102,.4);
+    text-decoration: none;
+    transition: transform .2s;
+}
+.whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+
+/* No mobile, o WhatsApp float se esconde (já existe botão na home) */
+@media (max-width: 991px) {
+    .whatsapp-float { display: none !important; }
+}
+
+/* ======================================================
+   RESPONSIVO — Mobile First
+   ====================================================== */
+
+/* Tablet (≤ 991px) */
+@media (max-width: 991px) {
+    /* Banner */
+    .hero-banner-section { padding: 12px 0 6px; }
+    .banner-item { height: 340px; }
+    .banner-content { padding: 28px 24px 36px; }
+    .banner-title { font-size: clamp(1.9rem, 6vw, 2.6rem); margin-bottom: 10px; }
+    .banner-subtitle { font-size: .88rem; margin-bottom: 20px; }
+    .btn-banner  { font-size: .92rem; padding: 12px 24px; }
+
+    /* Bento Grid */
+    .bento-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .bento-large { grid-column: 1 / 3; min-height: 240px; }
+    .bento-medium { min-height: 160px; }
+    .bento-overlay p { display: none; }
+
+    /* Produto */
+    .products-section { padding: 20px 0; }
+}
+
+/* Mobile Small (≤ 576px) */
+@media (max-width: 576px) {
+    .hero-banner-section { padding: 8px 0 4px; }
+    .banner-item { height: 290px; }
+    .banner-content { padding: 20px 18px 28px; }
+    .banner-title { font-size: clamp(1.6rem, 7vw, 2rem); margin-bottom: 8px; }
+    .banner-subtitle { font-size: .82rem; margin-bottom: 16px; display: none; }
+    .btn-banner { font-size: .88rem; padding: 11px 20px; }
+
+    .bento-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .bento-large { min-height: 190px; }
+    .bento-medium { min-height: 130px; }
+    .bento-stat { min-height: 120px; }
+    .bento-stat-num { font-size: 1.6rem; }
+
+    .section-title { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

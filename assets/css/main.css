@@ -1,0 +1,539 @@
+/* ================================================
+   MAIN.CSS — Cariri Estampa 2026
+   Base Layout + Floating Island Nav
+   ================================================ */
+
+/* ---------- RESET GLOBAL ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    /* CRÍTICO: impede scroll horizontal em TODA a página */
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+    background: #FAFAFA;
+}
+
+/* Safe zone para a floating nav mobile — nav tem 64px + 12px de bottom */
+@media (max-width: 991px) {
+    body { padding-bottom: 110px !important; }
+}
+
+/* ---------- VARIÁVEIS GLOBAIS ---------- */
+:root {
+    --nav-height: 64px;
+    --nav-bottom: 12px;
+    --header-h: 56px;
+
+    /* Cores do Design System */
+    --red:      #E53E3E;
+    --red-lt:   #FFF5F5;
+    --green:    #38A169;
+    --green-lt: #F0FFF4;
+    --gray-900: #1A202C;
+    --gray-700: #4A5568;
+    --gray-500: #718096;
+    --gray-400: #A0AEC0;
+    --gray-100: #F7FAFC;
+    --gray-50:  #FAFAFA;
+    --white:    #FFFFFF;
+    
+    --radius-xl: 32px;
+    --radius-pill: 999px;
+
+    /* LAYOUT CAPS — Unificação de Largura */
+    --container-max: 1400px;
+    --section-gap: 80px;
+}
+
+/* ---------- CONTAINER PREMIUM — LARGURA ÚNICA EM TODO O SITE ---------- */
+/* Sobrescreve TODOS os breakpoints do Bootstrap para garantir tamanho idêntico em todas as páginas */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+    max-width: 1140px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+@media (max-width: 576px) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-xxl { 
+        padding-left: 16px !important; 
+        padding-right: 16px !important; 
+    }
+}
+
+/* ---------- HEADER BASE ---------- */
+.header-app {
+    height: var(--header-h);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    width: 100%;
+    left: 0;
+    /* Evita saltos de layout ao transicionar */
+    transition: background 0.3s;
+}
+
+.header-app .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* Remove padding interno extra que pode vir do bootstrap flex */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Logos */
+.logo-img-h {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+    /* Remove qualquer margem que possa deslocar a logo */
+    margin: 0;
+    display: block;
+}
+.logo-img-f {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Nav Desktop Links */
+.nav-link-desk {
+    font-weight: 600;
+    color: #4A5568; /* var(--gray-700) fallback */
+    text-decoration: none;
+    font-size: .92rem;
+    transition: color .2s;
+}
+.nav-link-desk:hover, .nav-link-desk.active { color: #E53E3E; /* var(--red) */ }
+
+/* Icon Buttons Header */
+.icon-btn {
+    width: 40px; height: 40px;
+    background: transparent; border: none;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.35rem;
+    color: #4A5568;
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+    text-decoration: none;
+}
+.icon-btn:hover { background: #F7FAFC; color: #E53E3E; }
+
+.cart-badge {
+    position: absolute; top: -4px; right: -4px;
+    background: #E53E3E;
+    color: #fff;
+    font-size: 9px; font-weight: 700;
+    width: 17px; height: 17px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Category Chips (Universal) */
+.cats-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.cats-scroll::-webkit-scrollbar { display: none; }
+
+.cat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 20px; /* var(--radius-pill) fallback */
+    border: 1.5px solid #E2E8F0;
+    background: #FFFFFF;
+    font-size: .88rem;
+    font-weight: 600;
+    color: #4A5568;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all .2s;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.cat-chip:hover, .cat-chip.active {
+    background: #E53E3E;
+    border-color: #E53E3E;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(229,62,62,0.3);
+}
+
+/* Section Headers (Universal) */
+.section-tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #E53E3E;
+    background: #FFF5F5;
+    padding: 5px 12px;
+    border-radius: 99px;
+    margin-bottom: 8px;
+}
+.section-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #1A202C;
+    margin: 0;
+}
+
+/* ---------- UTILIDADES ---------- */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* NÃO sobrescreve os containers do Bootstrap — eles têm largura máxima própria */
+/* Apenas garante que nenhum elemento interno cause overflow */
+.row { --bs-gutter-x: 1.5rem; }
+
+/* ================================================
+   FLOATING ISLAND NAVIGATION — MOBILE
+   ================================================ */
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: var(--nav-bottom);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    width: calc(100% - 32px);
+    max-width: 420px;
+    height: var(--nav-height);
+
+    background: rgba(15, 18, 30, 0.90);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow:
+        0 24px 60px rgba(0,0,0,0.30),
+        0 8px 20px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    padding: 0 8px;
+    align-items: center;
+    justify-content: space-around;
+    animation: navSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav { display: flex; }
+}
+
+@media (min-width: 992px) {
+    .mobile-nav { display: none !important; }
+}
+
+/* Oculta os carrinhos do topo no Mobile para não haver duplicidade com a Nav inferior */
+@media (max-width: 991px) {
+    #header-cart-link, #openCartBtn {
+        display: none !important;
+    }
+}
+
+/* ---------- ITEM DA NAV ---------- */
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinhamento fixo no topo para icons */
+    text-decoration: none;
+    flex: 1;
+    height: 100%;
+    padding-top: 12px; /* Margem superior padrão para todos icons */
+    border-radius: 20px;
+    color: rgba(255,255,255,0.38);
+    transition: color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.nav-item i {
+    font-size: 21px;
+    line-height: 1;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.nav-item span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    opacity: 0;
+    position: absolute; /* Sai do fluxo flex para não empurrar o ícone */
+    bottom: 8px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.nav-item.active {
+    color: #fff;
+}
+
+.nav-item.active span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-item.active i {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: 5px;   /* Começa quase no topo da barra */
+    bottom: 5px; /* Vai até quase o final */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px; /* Mais larga para abraçar o texto com folga */
+    background: rgba(255,255,255,0.08); /* Um pouco mais sutil por ser maior */
+    border-radius: 18px; /* Cantos arredondados profissionais */
+    animation: navPillIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    z-index: 1;
+}
+
+@keyframes navPillIn {
+    from { opacity: 0; transform: translateX(-50%) scale(0.6); }
+    to   { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+/* ---------- BOTÃO CENTRAL (CARRINHO / SACOLA) ---------- */
+.nav-item.nav-center {
+    flex: 1.4;
+    color: #fff;
+    padding-top: 0;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* O label da Sacola sempre visível — diferente dos outros ítens */
+.nav-item.nav-center > span {
+    opacity: 1 !important;
+    position: static !important;   /* Volta ao fluxo flex */
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+}
+
+.nav-item.nav-center .nav-center-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 8px 24px rgba(229,62,62,0.5);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    position: relative;
+    z-index: 4;
+}
+
+.nav-item.nav-center:active .nav-center-icon {
+    transform: scale(0.92);
+    box-shadow: 0 4px 10px rgba(229,62,62,0.3);
+}
+
+/* Badge contagem do carrinho */
+.nav-center-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #fff;
+    color: #E53E3E;
+    font-size: 8px;
+    font-weight: 800;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(15,18,30,0.90);
+}
+
+.nav-item:active i {
+    transform: scale(0.88) !important;
+}
+
+/* Animação de entrada */
+@keyframes navSlideUp {
+    from { transform: translateX(-50%) translateY(120%); opacity: 0; }
+    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* ---------- FOOTER GLOBAL ---------- */
+.site-footer {
+    background: var(--gray-50);
+    padding: 64px 0 48px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.footer-heading {
+    font-weight: 700;
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--gray-900);
+    margin-bottom: 24px;
+}
+.footer-links {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.footer-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-size: .92rem;
+    transition: .2s;
+}
+.footer-links a:hover { color: var(--red); }
+
+.footer-location {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-socials { display: flex; gap: 12px; margin-top: 20px; }
+.social-icon {
+    width: 44px; height: 44px;
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    color: var(--gray-700);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: .2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+.social-icon:hover { background: var(--red-lt); color: var(--red); transform: translateY(-3px); }
+
+.footer-bottom {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .85rem;
+    color: var(--gray-400);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media (max-width: 991px) {
+    /* Oculta completamente o rodapé grande no mobile */
+    .site-footer .row,
+    .site-footer .footer-heading,
+    .site-footer .footer-links,
+    .site-footer .footer-location,
+    .site-footer .footer-socials,
+    .site-footer .logo-img-f,
+    .site-footer p:not(.footer-dev):not(.footer-cnpj) {
+        display: none !important;
+    }
+
+    /* O rodapé no mobile vira uma faixa minimalista */
+    .site-footer {
+        padding: 16px 0 120px !important; /* 120px = espaço pra nav flutuante */
+        border-top: 1px solid rgba(0,0,0,0.07);
+        background: #F7FAFC;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Oculta textos padrão do footer-bottom no mobile */
+    .footer-bottom > p:not(.footer-dev):not(.footer-cnpj) {
+        display: none !important;
+    }
+
+    /* Mostra os dois itens móbile */
+    .footer-cnpj,
+    .footer-dev {
+        display: block !important;
+    }
+}
+
+/* --- Créditos mobile (ocultos no desktop) --- */
+.footer-cnpj {
+    display: none;
+    font-size: 0.75rem;
+    color: #A0AEC0;
+    margin: 0;
+}
+.footer-dev {
+    display: none;
+    font-size: 0.75rem;
+    color: #A0AEC0;
+    margin: 0;
+}
+.footer-dev a {
+    color: #38A169;
+    font-weight: 600;
+    text-decoration: none;
+}
+.footer-dev a:hover { text-decoration: underline; }

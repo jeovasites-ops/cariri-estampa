@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco | Cariri Estampa</title>
+    <meta name="description" content="Entre em contato com a Cariri Estampa. WhatsApp, Instagram e e-mail disponíveis para atendimento em Crato, Juazeiro do Norte e Barbalha.">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/theme-default.css">
+</head>
+<body style="background: #F7FAFC;">
+
+    <!-- HEADER OFICIAL UNIFICADO -->
+    <header class="header-app">
+        <div class="container d-flex justify-content-between align-items-center h-100">
+            <div class="d-flex align-items-center gap-4">
+                <a href="index.html" class="d-flex align-items-center text-decoration-none" aria-label="Home">
+                    <img src="./logo.svg" alt="Cariri Estampa" class="logo-img-h">
+                </a>
+                <nav class="d-none d-lg-flex gap-4 align-items-center mb-0">
+                    <a href="index.html" class="nav-link-desk">Início</a>
+                    <a href="loja.html"    class="nav-link-desk">Loja</a>
+                    <a href="sobre.html"   class="nav-link-desk">Sobre</a>
+                    <a href="blog.html"    class="nav-link-desk">Blog</a>
+                    <a href="contato.html" class="nav-link-desk active">Contato</a>
+                </nav>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+                <a href="https://instagram.com/caririestampa" target="_blank" class="icon-btn" aria-label="Instagram">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+                <a href="carrinho.html" class="icon-btn d-none d-lg-inline-flex" aria-label="Carrinho" id="header-cart-link">
+                    <i class="ph ph-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 48px; padding-bottom: 140px;">
+        <div class="container">
+
+            <!-- Cabeçalho da Seção -->
+            <div class="mb-5">
+                <span class="section-tag">Contato</span>
+                <h1 class="section-title mt-2">Fale Conosco</h1>
+                <p style="color:#718096; margin-top:10px; font-size:1rem;">
+                    Escolha o canal mais fácil pra você. Respondemos rápido!
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Coluna Principal: Cards de Contato -->
+                <div class="col-lg-7">
+
+                    <!-- WhatsApp -->
+                    <a id="wa-link" href="#" target="_blank" style="text-decoration:none; display:block; margin-bottom:16px;">
+                        <div style="background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:28px 32px; display:flex; align-items:center; gap:24px; transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);" 
+                             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(37,211,102,0.12)';this.style.borderColor='#9AE6B4'"
+                             onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#E2E8F0'">
+                            <div style="width:64px;height:64px;background:#F0FFF4;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="ph-fill ph-whatsapp-logo" style="font-size:2rem;color:#38A169;"></i>
+                            </div>
+                            <div style="flex:1;">
+                                <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.2rem;color:#1A202C;margin-bottom:4px;">WhatsApp</div>
+                                <div id="wa-text" style="color:#38A169;font-weight:600;font-size:1rem;">(88) 99927-4659</div>
+                                <div style="color:#A0AEC0;font-size:0.8rem;margin-top:2px;">Clique para abrir conversa</div>
+                            </div>
+                            <i class="ph ph-arrow-right" style="font-size:1.3rem;color:#CBD5E0;"></i>
+                        </div>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a id="ig-link" href="#" target="_blank" style="text-decoration:none; display:block; margin-bottom:16px;">
+                        <div style="background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:28px 32px; display:flex; align-items:center; gap:24px; transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);"
+                             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(213,63,140,0.12)';this.style.borderColor='#FBB6CE'"
+                             onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#E2E8F0'">
+                            <div style="width:64px;height:64px;background:#FFF5F7;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="ph-fill ph-instagram-logo" style="font-size:2rem;color:#D53F8C;"></i>
+                            </div>
+                            <div style="flex:1;">
+                                <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.2rem;color:#1A202C;margin-bottom:4px;">Instagram</div>
+                                <div id="ig-text" style="color:#D53F8C;font-weight:600;font-size:1rem;">@caririestampa</div>
+                                <div style="color:#A0AEC0;font-size:0.8rem;margin-top:2px;">Ver nosso perfil e portfólio</div>
+                            </div>
+                            <i class="ph ph-arrow-right" style="font-size:1.3rem;color:#CBD5E0;"></i>
+                        </div>
+                    </a>
+
+                    <!-- E-mail -->
+                    <a id="mail-link" href="#" style="text-decoration:none; display:block;">
+                        <div style="background:#fff; border:1px solid #E2E8F0; border-radius:24px; padding:28px 32px; display:flex; align-items:center; gap:24px; transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);"
+                             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(49,130,206,0.12)';this.style.borderColor='#90CDF4'"
+                             onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#E2E8F0'">
+                            <div style="width:64px;height:64px;background:#EBF8FF;border-radius:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="ph-fill ph-envelope-simple" style="font-size:2rem;color:#3182CE;"></i>
+                            </div>
+                            <div style="flex:1;">
+                                <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.2rem;color:#1A202C;margin-bottom:4px;">E-mail</div>
+                                <div id="mail-text" style="color:#3182CE;font-weight:600;font-size:1rem;">jeova.sites@gmail.com</div>
+                                <div style="color:#A0AEC0;font-size:0.8rem;margin-top:2px;">Respondemos em até 24h</div>
+                            </div>
+                            <i class="ph ph-arrow-right" style="font-size:1.3rem;color:#CBD5E0;"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Coluna Lateral: Info + Localização -->
+                <div class="col-lg-5">
+                    <!-- Card Localização -->
+                    <div style="background:linear-gradient(135deg,#1A202C,#2D3748);border-radius:28px;padding:36px;color:#fff;height:100%;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;">
+                        <div>
+                            <i class="ph-fill ph-map-pin" style="font-size:2.5rem;color:#FC8181;margin-bottom:20px;display:block;"></i>
+                            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.5rem;margin-bottom:12px;">Estamos no Cariri</h3>
+                            <p style="color:rgba(255,255,255,0.65);line-height:1.7;font-size:0.95rem;margin-bottom:0;">
+                                Atendemos Crato, Juazeiro do Norte e Barbalha com entregas expressas para maior comodidade.
+                            </p>
+                        </div>
+
+                        <div style="margin-top:32px;">
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                                <div style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <i class="ph-fill ph-clock" style="color:rgba(255,255,255,0.7);"></i>
+                                </div>
+                                <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Seg – Sex: 08h às 18h &nbsp;|&nbsp; Sáb: 08h às 12h</div>
+                            </div>
+                            <div id="loc-tag" style="display:inline-block;background:rgba(229,62,62,0.2);color:#FC8181;border:1px solid rgba(229,62,62,0.3);padding:8px 18px;border-radius:99px;font-size:0.82rem;font-weight:700;margin-top:8px;">
+                                Crato - Ceará, Região do Cariri
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Orçamento -->
+            <div style="background:linear-gradient(135deg,#E53E3E,#C53030);border-radius:28px;padding:48px 40px;margin-top:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+                <div>
+                    <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.8rem;color:#fff;margin-bottom:8px;">Quer um orçamento rápido?</h2>
+                    <p style="color:rgba(255,255,255,0.75);margin:0;font-size:1rem;">Chame no WhatsApp e receba a resposta em minutos.</p>
+                </div>
+                <a id="cta-wa" href="#" target="_blank" 
+                   style="background:#fff;color:#E53E3E;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1rem;padding:16px 32px;border-radius:16px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;flex-shrink:0;transition:0.2s;"
+                   onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''">
+                    <i class="ph-fill ph-whatsapp-logo" style="font-size:1.3rem;"></i>
+                    Chamar no WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./logo.svg" alt="Cariri Estampa" class="logo-img-f mb-3">
+                    <p style="font-size:.88rem;color:var(--gray-500);line-height:1.7;max-width:280px;">
+                        A estamparia mais premium do Cariri Cearense.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://instagram.com/caririestampa" target="_blank" class="social-icon"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a id="footer-wa" href="#" class="social-icon" style="color:#25D366;"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Menu</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="loja.html">Loja</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Produtos</h5>
+                    <ul class="footer-links">
+                        <li><a href="loja.html?cat=Vestuario">Camisetas</a></li>
+                        <li><a href="loja.html?cat=Papelaria">Papelaria</a></li>
+                        <li><a href="loja.html?cat=Grafica">Gráfica</a></li>
+                        <li><a href="loja.html?cat=Brindes">Brindes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="footer-heading">Atendimento</h5>
+                    <div class="footer-location mb-3">
+                        <i class="ph-fill ph-map-pin" style="color:var(--red);font-size:1.2rem;"></i>
+                        <p style="font-size:.85rem;color:var(--gray-700);margin:0;">Crato, Juazeiro do Norte e Barbalha.</p>
+                    </div>
+                    <div class="footer-location">
+                        <i class="ph-fill ph-clock" style="color:var(--red);font-size:1.2rem;"></i>
+                        <p style="font-size:.85rem;color:var(--gray-700);margin:0;">Seg à Sex: 08h às 18h<br>Sáb: 08h às 12h</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+            <p class="footer-cnpj">CNPJ: 64.134.860/0001-89 &mdash; Cariri Estampa</p>
+            <p class="footer-dev">Dev: <a href="https://wa.me/5588999274659" target="_blank">Jeová Cavalcante</a></p>
+                <p>&copy; 2026 Cariri Estampa. Todos os direitos reservados.</p>
+                <p style="color:var(--gray-400);">Feito com <i class="ph-fill ph-heart" style="color:var(--red);"></i> no Cariri - CE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navegação Mobile -->
+    <nav class="mobile-nav" role="navigation">
+        <a href="index.html" class="nav-item"><i class="ph ph-house-simple"></i><span>Início</span></a>
+        <a href="loja.html" class="nav-item"><i class="ph ph-storefront"></i><span>Loja</span></a>
+        <a href="carrinho.html" class="nav-item nav-center">
+            <div class="nav-center-icon"><i class="ph ph-shopping-bag"></i><span class="nav-center-badge" id="nav-cart-count">0</span></div>
+            <span>Sacola</span>
+        </a>
+        <a href="sobre.html" class="nav-item"><i class="ph ph-user-circle"></i><span>Sobre</span></a>
+        <a href="blog.html" class="nav-item"><i class="ph ph-article"></i><span>Blog</span></a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Contatos carregados via fetch() — edite apenas assets/data/contatos.json -->
+    <script>
+    fetch('./assets/data/contatos.json')
+        .then(r => r.json())
+        .then(c => {
+            const wa     = c.whatsapp;
+            const ig     = c.instagram.replace('@', '');
+            const mail   = c.email;
+            const waLink = `https://wa.me/${wa}?text=${encodeURIComponent('Olá! Vim pelo site e gostaria de um orçamento.')}`;
+
+            document.getElementById('wa-link').href = waLink;
+            document.getElementById('wa-text').textContent = wa.replace(/^55(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+            document.getElementById('ig-link').href = `https://instagram.com/${ig}`;
+            document.getElementById('ig-text').textContent = c.instagram;
+            document.getElementById('mail-link').href = `mailto:${mail}`;
+            document.getElementById('mail-text').textContent = mail;
+            document.getElementById('loc-tag').textContent = c.endereco;
+            document.getElementById('cta-wa').href = waLink;
+            document.getElementById('footer-wa').href = waLink;
+        })
+        .catch(e => console.error('Erro ao carregar contatos.json:', e));
+    </script>
+
+    <script src="./assets/js/core.js"></script>
+</body>
+</html>
